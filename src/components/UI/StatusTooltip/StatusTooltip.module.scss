@@ -1,0 +1,28 @@
+.tooltip {
+    position: relative;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+      display: flex;
+    width: 503px;
+    height: 46px;
+    background-color: #EAEAEA;
+    color: #404040;
+    font-size: 14px;
+    text-align: left;
+    align-items: center;
+    padding: 11px 12px;
+    position: absolute;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 3%;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #EAEAEA transparent;
+  }
+  

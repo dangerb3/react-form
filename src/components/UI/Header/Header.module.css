@@ -1,0 +1,67 @@
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 190px;
+  width: inherit;
+  padding-left: 10px;
+  position: relative;
+}
+
+.header__status-link {
+  margin-left: 123px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.title-black {
+  color: black;
+}
+
+.status-link {
+  font-size: 12px;
+  -webkit-text-decoration-style: dashed;
+          text-decoration-style: dashed;
+}
+
+.content-line {
+  margin-top: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.tooltip-box {
+  position: absolute;
+  left: 232px;
+  width: 503px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tooltip-box__input {
+  min-width: 336px;
+  width: 336px;
+  height: 31px;
+  padding: 6px 12px;
+}
+
+.input {
+  font-size: 16px;
+}
+/*# sourceMappingURL=Header.module.css.map */
