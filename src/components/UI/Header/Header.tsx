@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState,  useContext, FormEvent } from "react";
 import style from "./Header.module.scss";
 import StatusTooltip from "../StatusTooltip/StatusTooltip";
 import { Context } from "../../../context";
 
-const Header = () => {
+const Header = ():JSX.Element => {
   const { tooltipText, setTooltipText } = useContext(Context);
   const [isEditing, setIsEditing] = useState(false);
 
-  const isEditingToggle = (e) => {
+  const isEditingToggle = (e: FormEvent) => {
     e.preventDefault();
     isEditing ? setIsEditing(false) : setIsEditing(true);
   };

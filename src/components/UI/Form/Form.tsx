@@ -6,6 +6,8 @@ import style from "./Form.module.scss";
 import { Context } from "../../../context/index";
 import DateTimeService from "../../../utils/dateTime";
 
+import { CitiesJson } from "../../../ts/interfaces/interfaces";
+
 const Form = () => {
   const [universitiesList, setUniversitiesList] = useState("");
   const [citiesList, setCitiesList] = useState("");
@@ -21,25 +23,23 @@ const Form = () => {
   const [passwordRepeatValid, setPasswordRepeatValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
 
-  const [validationSuccessfull, setValidationSuccessfull] = useState(false);
-
-  const formData = useRef();
+  const formData = useRef<HTMLElement>();
 
   async function getUniversities() {
     const data = await parseUniversitiesList();
     setUniversitiesList(data);
   }
 
-  const citiesListPrepare = (cities) => {
+  const citiesListPrepare = (cities: CitiesJson[]) => {
     const filteredCitiesList = filterCities(
-      (item) => item.population > 50000,
+      (item: CitiesJson) => item.population > 50000,
       cities
     );
 
     const sortedAndFilteredCitiesList = sortCities(filteredCitiesList);
 
     const populationList = sortedAndFilteredCitiesList.map(
-      (item) => item.population
+      (item: CitiesJson) => item.population
     );
 
     const temp = sortedAndFilteredCitiesList[0];
@@ -98,12 +98,9 @@ const Form = () => {
       setEmailValid(true);
     }
 
-    setTimeout(() => {
-      setValidationSuccessfull(true, sendForm(e));
-    }, 5000);
   };
 
-  const sendForm = (e) => {
+  const sendForm = (e: MouseEvent) => {
     e.preventDefault();
 
     const [city, university, password, passwordRepeat, email] = [
