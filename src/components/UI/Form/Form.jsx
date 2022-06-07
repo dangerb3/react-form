@@ -27,6 +27,7 @@ const Form = () => {
 
   async function getUniversities() {
     const data = await parseUniversitiesList();
+    // console.log(data);
     setUniversitiesList(data);
   }
 
